@@ -5,9 +5,11 @@
 .Header {
   padding: 35px 0;
   position: relative;
+  
   h1 {
     font-size: 24px;
     font-weight: 700;
+    color:#4185DB;
   }
   &--contact {
     font-weight: 700;
@@ -103,8 +105,15 @@ main {
  display: flex;
  justify-content: center;
  background-color: #d8b0b0;
+ overflow: hidden; 
 
  svg {
-   padding: 15px
+   padding: 15px;
+   font-size:24px;
+   color: e1e1e1;
+   transition: color 0.3s linear;
+   &:hover{
+     color:#ffff;
+   }
  }
 }

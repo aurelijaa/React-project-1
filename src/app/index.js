@@ -68,7 +68,7 @@ function App() {
               <div>
                 <h3>Singing</h3>
                 <p>
-                  Minisons' language. Hope you appreciate our humor So how
+                  Minisons language. Hope you appreciate our humor So how
                   exactly to use the generator? While designing a new site, or
                   web page copy the following 1, 2, 3, and 4 paragraphs with
                   plain lorem ipsum text to fill in the template (or your
@@ -80,7 +80,7 @@ function App() {
               <div>
                 <h3>Singing</h3>
                 <p>
-                  Minisons' language. Hope you appreciate our humor So how
+                  Minisons language. Hope you appreciate our humor So how
                   exactly to use the generator? While designing a new site, or
                   web page copy the following 1, 2, 3, and 4 paragraphs with
                   plain lorem ipsum text to fill in the template (or your
@@ -154,9 +154,27 @@ function App() {
         </main>
       </div>
       <footer className="Footer">
-        <FaGithubAlt />
-        <FaFacebook />
-        <FaLinkedinIn />
+        <a
+          href="https://github.com/aurelijaa/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithubAlt />
+        </a>
+        <a
+          href="https://github.com/aurelijaa/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebook />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/aurelija-kasparavi%C4%8Di%C5%ABt%C4%97-199480171"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn />
+        </a>
       </footer>
     </React.Fragment>
   );
