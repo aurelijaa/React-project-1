@@ -1,64 +1,130 @@
 const education = {
-  label: 'Education',
-  school: 'Gyvenimo universitetats',
-  major: {
-    label: 'Major:',
-    value: ' Programuotojas',
+  en: {
+    label: 'Education',
+    school: 'Life university',
+    major: {
+      label: 'Major:',
+      value: ' Programmer',
+    },
+    minor: {
+      label: 'Minor:',
+      value: 'Lecturer',
+    },
   },
-  minor: {
-    label: 'Minor:',
-    value: 'Mokytojas',
+  kr: {
+    label: 'E교육',
+    school: '생명 대',
+    major: {
+      label: '주요:',
+      value: '프로그램 제작자',
+    },
+    minor: {
+      label: '미성:',
+      value: '강사',
+    },
   },
 };
 
 const skills = {
-  label: 'Skills',
-  skillslist: [
-    {
-      label: 'Singing',
-      summary:
-        ' Minisons language. Hope you appreciate our humor So how exactly to',
-    },
+  en: {
+    label: 'Skills',
+    skillslist: [
+      {
+        label: 'Singing',
+        summary:
+          ' Minisons language. Hope you appreciate our humor So how exactly to',
+      },
 
-    {
-      label: 'Swimming',
-      summary:
-        ' Minisons language. Hope you appreciate our humor So how exactly to',
-    },
-  ],
+      {
+        label: 'Swimming',
+        summary:
+          ' Minisons language. Hope you appreciate our humor So how exactly to',
+      },
+    ],
+  },
+  kr: {
+    label: '기술',
+    skillslist: [
+      {
+        label: '명음',
+        summary:
+          ' Minisons language. Hope you appreciate our humor So how exactly to',
+      },
+
+      {
+        label: '수영',
+        summary:
+          ' Minisons language. Hope you appreciate our humor So how exactly to',
+      },
+    ],
+  },
 };
 
 const experience = {
-  label: 'Experience',
-  list: [
-    {
-      title: 'Code Academy',
-      subtitle: 'Very good student 2018.10-spanaaaaaa',
-      responsibilities: [
-        'HTML',
-        'CSS/SCSS',
-        'JavaScript',
-        'Node.js',
-        'React.js',
-      ],
-    },
-    {
-      title: 'My Life',
-      subtitle: 'Never to finish learning',
-      responsibilities: ['Calculating', 'Talking', 'Writing'],
-    },
-    {
-      title: 'Code Academy',
-      subtitle: 'Very good student 2018.10-spanaaaaaa',
-      responsibilities: [
-        'HTML',
-        'CSS/SCSS',
-        'JavaScript',
-        'Node.js',
-        'React.js',
-      ],
-    },
-  ],
+  en: {
+    label: 'Experience',
+    list: [
+      {
+        title: 'Code Academy',
+        subtitle: 'Very good student 2018.10-spanaaaaaa',
+        responsibilities: [
+          'HTML',
+          'CSS/SCSS',
+          'JavaScript',
+          'Node.js',
+          'React.js',
+        ],
+      },
+      {
+        title: 'My Life',
+        subtitle: 'Never to finish learning',
+        responsibilities: ['Calculating', 'Talking', 'Writing'],
+      },
+      {
+        title: 'Code Academy',
+        subtitle: 'Very good student 2018.10-spanaaaaaa',
+        responsibilities: [
+          'HTML',
+          'CSS/SCSS',
+          'JavaScript',
+          'Node.js',
+          'React.js',
+        ],
+      },
+    ],
+  },
+  kr: {
+    label: 'Experience',
+    list: [
+      {
+        title: 'Code Academy',
+        subtitle: 'Very good student 2018.10-spanaaaaaa',
+        responsibilities: [
+          'HTML',
+          'CSS/SCSS',
+          'JavaScript',
+          'Node.js',
+          'React.js',
+        ],
+      },
+      {
+        title: 'My Life',
+        subtitle: 'Never to finish learning',
+        responsibilities: ['Calculating', 'Talking', 'Writing'],
+      },
+      {
+        title: 'Code Academy',
+        subtitle: 'Very good student 2018.10-spanaaaaaa',
+        responsibilities: [
+          'HTML',
+          'CSS/SCSS',
+          'JavaScript',
+          'Node.js',
+          'React.js',
+        ],
+      },
+    ],
+  },
 };
 
 // visi dare

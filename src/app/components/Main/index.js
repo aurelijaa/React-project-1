@@ -1,33 +1,39 @@
 import React from 'react';
 import './index.scss';
-import data from './data.js';
+import PropTypes from 'prop-types';
+import data from './data';
 
-function Main() {
+function Main(props) {
+  const { language } = props;
+  const skills = data.skills[language];
+  const education = data.education[language];
+  const experience = data.experience[language];
+  // const sectionlist = data.sectionlist[language];
   return (
     <main>
       <section className="Section">
         <div className="Section--left">
-          <h3>{data.education.label}</h3>
+          <h3>{education.label}</h3>
         </div>
         <div className="Section--right">
-          <h3>{data.education.school}</h3>
+          <h3>{education.school}</h3>
           <p>
-            <span>{`${data.education.major.label} `}</span>
-            {data.education.major.value}
+            <span>{`${education.major.label} `}</span>
+            {education.major.value}
           </p>
           <p>
-            <span>{`${data.education.minor.label} `}</span>
-            {data.education.minor.value}
+            <span>{`${education.minor.label} `}</span>
+            {education.minor.value}
           </p>
         </div>
       </section>
 
       <section className="Section">
         <div className="Section--left">
-          <h3>{data.skills.label}</h3>
+          <h3>{skills.label}</h3>
         </div>
         <div className="Section--right">
-          {data.skills.skillslist.map(({ label, summary }, index) => (
+          {skills.skillslist.map(({ label, summary }, index) => (
             <div key={index}>
               <h3>{label}</h3>
               <p> {summary} </p>
@@ -38,10 +44,10 @@ function Main() {
 
       <section className="Section">
         <div className="Section--left">
-          <h3>{data.experience.label}</h3>
+          <h3>{experience.label}</h3>
         </div>
         <div className="Section--right">
-          {data.experience.list.map(
+          {experience.list.map(
             ({ title, subtitle, responsibilities }, index) => (
               <div key={index}>
                 <div className="Section--right-job-title">
@@ -59,17 +65,26 @@ function Main() {
         </div>
       </section>
 
-      {data.sectionlist.map(({ en, kr }, index) => (
+      {data.sectionlist.map((section, index) => (
         <section key={index} className="Section">
           <div className="Section--left">
-            <h3>{en.label}</h3>
+            <h3>{section[language].label}</h3>
           </div>
           <div className="Section--right">
-            <p>{en.description}</p>
+            <p>{section[language].description}</p>
           </div>
         </section>
       ))}
     </main>
   );
 }
+
+Main.propTypes = {
+  language: PropTypes.oneOf(['en', 'kr']),
+};
+
+Main.defaultProps = {
+  language: 'en',
+};
+
 export default Main;
