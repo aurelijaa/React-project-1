@@ -32,7 +32,7 @@ function Header(props) {
       />
       <select
         value={language}
-        onChange={event => onLanguage(event.target.value )}
+        onChange={event => onLanguage(event.target.value)}
       >
         <option value="en">English</option>
         <option value="kr">코리안</option>
