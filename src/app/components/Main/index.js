@@ -1,117 +1,74 @@
 import React from 'react';
 import './index.scss';
+import data from './data.js';
 
 function Main() {
   return (
     <main>
-      <setion className="Section">
+      <section className="Section">
         <div className="Section--left">
-          <h3>Education</h3>
+          <h3>{data.education.label}</h3>
         </div>
         <div className="Section--right">
-          <h3>Gyvenimo Universitetas</h3>
+          <h3>{data.education.school}</h3>
           <p>
-            <span>Major:</span>
-            Programuotojas
+            <span>{`${data.education.major.label} `}</span>
+            {data.education.major.value}
           </p>
           <p>
-            <span>Mindor:</span>
-            Mokytojas
+            <span>{`${data.education.minor.label} `}</span>
+            {data.education.minor.value}
           </p>
         </div>
-      </setion>
+      </section>
 
-      <setion className="Section">
+      <section className="Section">
         <div className="Section--left">
-          <h3>Skils</h3>
+          <h3>{data.skills.label}</h3>
         </div>
         <div className="Section--right">
-          <div>
-            <h3>Singing</h3>
-            <p>
-              Minisons language. Hope you appreciate our humor So how exactly to
-              use the generator? While designing a new site, or web page copy
-              the following 1, 2, 3, and 4 paragraphs with plain lorem ipsum
-              text to fill in the template (or your default model) for your
-              future content. It is convenient to see how the content with the
-              actual distribution of letters and spaces in paragraphs will be
-              displayed.
-            </p>
-          </div>
-          <div>
-            <h3>Singing</h3>
-            <p>
-              Minisons language. Hope you appreciate our humor So how exactly to
-              use the generator? While designing a new site, or web page copy
-              the following 1, 2, 3, and 4 paragraphs with plain lorem ipsum
-              text to fill in the template (or your default model) for your
-              future content. It is convenient to see how the content with the
-              actual distribution of letters and spaces in paragraphs will be
-              displayed.
-            </p>
-          </div>
-        </div>
-      </setion>
-
-      <setion className="Section">
-        <div className="Section--left">
-          <h3>Experience</h3>
-        </div>
-        <div className="Section--right">
-          <div>
-            <div className="Section--right-job-title">
-              <h3>Code Academy</h3>
-              <span> Very good student 2018.10-spanaaaaaa</span>
+          {data.skills.skillslist.map(({ label, summary }, index) => (
+            <div key={index}>
+              <h3>{label}</h3>
+              <p> {summary} </p>
             </div>
-            <ul>
-              <li>HTML</li>
-              <li>CSS/SCSS</li>
-              <li>JavaScript</li>
-              <li>Node.js</li>
-              <li>React.js</li>
-            </ul>
-          </div>
-          <div>
-            <div className="Section--right-job-title">
-              <h3>My Life</h3>
-              <span> Never to finish learning</span>
-            </div>
-            <ul>
-              <li>Calculating</li>
-              <li>Talking</li>
-              <li>Writing</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Code Academy</h3>
-            <ul>
-              <li>HTML</li>
-              <li>CSS/SCSS</li>
-              <li>JavaScript</li>
-              <li>Node.js</li>
-              <li>React.js</li>
-            </ul>
-          </div>
+          ))}
         </div>
-      </setion>
+      </section>
 
-      <setion className="Section">
+      <section className="Section">
         <div className="Section--left">
-          <h3>Hobies</h3>
+          <h3>{data.experience.label}</h3>
         </div>
         <div className="Section--right">
-          <p>Singing with thebears, eating and sleeping with the books</p>
+          {data.experience.list.map(
+            ({ title, subtitle, responsibilities }, index) => (
+              <div key={index}>
+                <div className="Section--right-job-title">
+                  <h3>{title}</h3>
+                  <span> {subtitle}</span>
+                </div>
+                <ul>
+                  {responsibilities.map((value, i) => (
+                    <li key={i}>{value}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
         </div>
-      </setion>
+      </section>
 
-      <setion className="Section">
-        <div className="Section--left">
-          <h3>References</h3>
-        </div>
-        <div className="Section--right">
-          <p>A lot can say my granmather</p>
-        </div>
-      </setion>
+      {data.sectionlist.map(({ en, kr }, index) => (
+        <section key={index} className="Section">
+          <div className="Section--left">
+            <h3>{en.label}</h3>
+          </div>
+          <div className="Section--right">
+            <p>{en.description}</p>
+          </div>
+        </section>
+      ))}
     </main>
   );
 }
