@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function IconLink(props) {
   const { href, target, icon: Icon } = props;
-  throw Error('Icon Link Failed');
+  // throw Error('Icon Link Failed');
 
   // const Component=component;
   return (

@@ -15,6 +15,12 @@ class App extends React.Component {
     };
   }
 
+  toggleHeader = () => {
+    this.setState(
+      state => console.log(state) || { showHeader: !state.showHeader }
+    );
+  };
+
   componentDidCatch(error, info) {
     this.setState({ error: true });
     console.log('Error', error);
@@ -30,14 +36,7 @@ class App extends React.Component {
     return (
       <ErrorBoundary message={<div>Oops!!!</div>}>
         <div className="App">
-          <button
-            type="button"
-            onClick={() =>
-              this.setState(
-                state => console.log(state) || { showHeader: !state.showHeader }
-              )
-            }
-          >
+          <button type="button" onClick={this.toggleHeader}>
             <span role="img" aria-label="hide header">
               {showHeader ? '❌' : '✔️'}
             </span>
