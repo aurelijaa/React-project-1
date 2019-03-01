@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, Main, Footer } from './components';
+import { Header, Main, Footer, ErrorBoundary } from './components';
 // import Main from './components/Main';
 // import Footer from './components/Footer';
 import './index.scss';
@@ -10,23 +10,48 @@ class App extends React.Component {
     super();
     this.state = {
       language: 'en',
+      showHeader: true,
+      error: false,
     };
   }
 
-  render() {
-    const { language } = this.state;
+  componentDidCatch(error, info) {
+    this.setState({ error: true });
+    console.log('Error', error);
+    console.log('Info', info);
+  }
 
+  render() {
+    // console.log('render');
+    const { language, showHeader, error } = this.state;
+    if (error) {
+      return <div>Opps something went very wrong!!</div>;
+    }
     return (
-      <React.Fragment>
+      <ErrorBoundary message={<div>Oops!!!</div>}>
         <div className="App">
-          <Header
-            onLanguage={lang => this.setState({ language: lang })}
-            language={language}
-          />
+          <button
+            type="button"
+            onClick={() =>
+              this.setState(
+                state => console.log(state) || { showHeader: !state.showHeader }
+              )
+            }
+          >
+            <span role="img" aria-label="hide header">
+              {showHeader ? '❌' : '✔️'}
+            </span>
+          </button>
+          {showHeader && (
+            <Header
+              onLanguage={lang => this.setState({ language: lang })}
+              language={language}
+            />
+          )}
           <Main language={language} />
         </div>
         <Footer />
-      </React.Fragment>
+      </ErrorBoundary>
     );
   }
 }
